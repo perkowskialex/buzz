@@ -1,17 +1,19 @@
 import React, { Component } from "react";
+import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
-import About from "../About/About";
-import Buzzme from "../Buzzme/Buzzme";
+import userService from "../../utils/userService";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
-import userService from "../../utils/userService";
-import "./App.css";
+import HomePage from "../HomePage/HomePage";
 
 class App extends Component {
   constructor() {
     super();
-    this.state = { user: userService.getUser() };
+    this.state = {
+      user: userService.getUser()
+    };
   }
+
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -23,12 +25,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Buzz App</h1>
-        <Link exact to="/about">
-          <button>About</button>
-        </Link>
-        <Link exact to="/buzzme">
-          <button>Buzz Me!</button>
+        <Link exact to="/">
+          Home
         </Link>
         <Link exact to="/signup">
           Sign Up
@@ -37,23 +35,14 @@ class App extends Component {
           Log In
         </Link>
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/buzzme">
-            <Buzzme />
-          </Route>
-          <Route path="/signup">
-            <SignupPage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
           <Route
             exact
             path="/"
             render={() => (
-              <About user={this.state.user} handleLogout={this.handleLogout} />
+              <HomePage
+                user={this.state.user}
+                handleLogout={this.handleLogout}
+              />
             )}
           />
           <Route
