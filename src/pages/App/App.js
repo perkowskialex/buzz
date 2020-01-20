@@ -28,7 +28,7 @@ class App extends Component {
           handleLogout={this.handleLogout}
           handleSignuporLogin={this.handleSignuporLogin}
         />
-        <Footer />
+        <Footer className="footer" />
       </div>
     );
   }
