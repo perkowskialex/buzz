@@ -38,6 +38,7 @@ export default class Nav extends Component {
               <MaintenanceListPage
                 user={this.props.user}
                 handleLogout={this.props.handleLogout}
+                handleDeleteMaintenance={this.props.handleDeleteMaintenance}
               />
             )}
           />
