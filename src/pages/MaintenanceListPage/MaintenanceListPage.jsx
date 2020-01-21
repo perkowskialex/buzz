@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MaintenanceCard from "../../components/MaintenanceCard/MaintenanceCard";
+import MaintenanceListItem from "../../components/MaintenanceListItem/MaintenanceListItem";
 
 export default function MaintenanceListPage(props) {
   return (
@@ -7,7 +7,7 @@ export default function MaintenanceListPage(props) {
       <h1>Maintenance List</h1>
       <div>
         {props.maintenances.map(maintenance => (
-          <MaintenanceCard
+          <MaintenanceListItem
             maintenance={maintenance}
             handleDeleteMaintenance={props.handleDeleteMaintenance}
             key={maintenance._id}
