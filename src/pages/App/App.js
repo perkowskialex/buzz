@@ -2,19 +2,26 @@ import React, { Component } from "react";
 import "./App.css";
 import userService from "../../utils/userService";
 import Nav from "../../components/Nav/Nav";
-import Footer from "../../components/Footer/Footer";
-import AddMaintenancePage from "../AddMaintenancePage/AddMaintenancePage";
-import EditMaintenancePage from "../EditMaintenancePage/EditMaintenancePage";
-import MaintenanceDetailPage from "../MaintenanceDetailPage/MaintenanceDetailPage";
-import MaintenanceListPage from "../MaintenanceListPage/MaintenanceListPage";
+import * as maintenanceAPI from "../../services/maintenances-api";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      maintenances: []
     };
   }
+
+  handleAddMaintenance = async newMaintenanceData => {
+    const newMaintenance = await maintenanceAPI.create(newMaintenanceData);
+    this.setState(
+      state => ({
+        maintenances: [...state.maintenances, newMaintenance]
+      }),
+      () => this.props.history.push("/")
+    );
+  };
 
   handleLogout = () => {
     userService.logout();
@@ -24,6 +31,12 @@ class App extends Component {
   handleSignuporLogin = () => {
     this.setState({ user: userService.getUser() });
   };
+
+  async componentDidMount() {
+    const maintenances = await maintenanceAPI.getAll();
+    this.setState({ maintenances });
+  }
+
   render() {
     return (
       <div>
@@ -31,8 +44,8 @@ class App extends Component {
           user={this.state.user}
           handleLogout={this.handleLogout}
           handleSignuporLogin={this.handleSignuporLogin}
+          handleAddMaintenance={this.handleAddMaintenance}
         />
-        <Footer className="footer" />
       </div>
     );
   }

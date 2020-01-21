@@ -8,6 +8,8 @@ const app = express();
 require("dotenv").config();
 require("./config/database");
 
+let maintenancesRouter = require("./routes/api/maintenances");
+
 app.use(logger("dev"));
 app.use(express.json());
 
@@ -16,6 +18,7 @@ app.use(express.static(path.join(__dirname, "build")));
 
 // Put API routes here, before the "catch all" route
 app.use("/api/users", require("./routes/api/users"));
+app.use("/api/maintenances", require("./routes/api/maintenances"));
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work

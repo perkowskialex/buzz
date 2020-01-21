@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
-import HomePage from "../../pages/HomePage/HomePage";
+import MaintenanceListPage from "../../pages/MaintenanceListPage/MaintenanceListPage";
+import AddMaintenancePage from "../../pages/AddMaintenancePage/AddMaintenancePage";
 import { Link, Route, Switch } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar/AppBar";
 import { Toolbar } from "@material-ui/core";
@@ -10,7 +11,10 @@ export default class Nav extends Component {
   render() {
     return (
       <>
-        <AppBar position="static" style={{ alignItems: "space-around" }}>
+        <AppBar
+          position="static"
+          style={{ display: "flex", alignItems: "space-around" }}
+        >
           <Toolbar>
             <Link exact to="/">
               Home
@@ -21,6 +25,9 @@ export default class Nav extends Component {
             <Link exact to="/login">
               Log In
             </Link>
+            <Link exact to="/add">
+              Add Maintenance
+            </Link>
           </Toolbar>
         </AppBar>
         <Switch>
@@ -28,9 +35,20 @@ export default class Nav extends Component {
             exact
             path="/"
             render={() => (
-              <HomePage
+              <MaintenanceListPage
                 user={this.props.user}
                 handleLogout={this.props.handleLogout}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/add"
+            render={() => (
+              <AddMaintenancePage
+                user={this.props.user}
+                handleLogout={this.props.handleLogout}
+                handleAddMaintenance={this.props.handleAddMaintenance}
               />
             )}
           />
