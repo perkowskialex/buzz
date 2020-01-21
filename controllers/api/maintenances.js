@@ -9,10 +9,8 @@ module.exports = {
   update
 };
 
-async function index(req, res, next) {
-  const maintenances = await User.findById(req.user._id).populate(
-    "maintenances"
-  );
+async function index(req, res) {
+  const maintenances = await Maintenance.find({});
   res.status(200).json(maintenances);
 }
 

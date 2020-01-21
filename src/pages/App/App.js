@@ -23,6 +23,16 @@ class App extends Component {
     );
   };
 
+  handleDeleteMaintenance = async id => {
+    await maintenanceAPI.deleteOne(id);
+    this.setState(
+      state => ({
+        maintenances: state.maintenances.filter(p => p._id !== id)
+      }),
+      () => this.props.history.push("/")
+    );
+  };
+
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -45,6 +55,7 @@ class App extends Component {
           handleLogout={this.handleLogout}
           handleSignuporLogin={this.handleSignuporLogin}
           handleAddMaintenance={this.handleAddMaintenance}
+          handleDeleteMaintenance={this.handleDeleteMaintenance}
         />
       </div>
     );
