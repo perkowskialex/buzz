@@ -5,6 +5,7 @@ import Nav from "../../components/Nav/Nav";
 import * as maintenanceAPI from "../../services/maintenances-api";
 import { Route } from "react-router-dom";
 import MaintenanceDetailPage from "../../pages/MaintenanceDetailPage/MaintenanceDetailPage";
+import Footer from "../../components/Footer/Footer";
 
 class App extends Component {
   constructor() {
@@ -88,6 +89,7 @@ class App extends Component {
             )}
           />
         </main>
+        <Footer />
       </div>
     );
   }

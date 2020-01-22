@@ -13,14 +13,16 @@ export default function MaintenanceListItem({
           <div class="card blue darken-1">
             <div class="card-content white-text">
               <span class="card-title">{maintenance.name}</span>
-              <p>{maintenance.description}</p>
+              <p>Description: {maintenance.description}</p>
               <p></p>
               <p>Location: {maintenance.location}</p>
               <p>Days to complete: {maintenance.time}</p>
             </div>
-            <div class="card-action">
+            <div class="card-action center">
               <Link to={{ pathname: "/details", state: { maintenance } }}>
-                DETAILS
+                <button className="waves-effect waves-light btn">
+                  DETAILS<i class="material-icons left">visibility</i>
+                </button>
               </Link>
               <Link
                 to={{
@@ -28,13 +30,15 @@ export default function MaintenanceListItem({
                   state: { maintenance }
                 }}
               >
-                EDIT{" "}
+                <button className="waves-effect waves-light btn amber">
+                  EDIT<i class="material-icons left">edit</i>
+                </button>{" "}
               </Link>
               <button
                 className="btn waves-effect waves-light red"
                 onClick={() => handleDeleteMaintenance(maintenance._id)}
               >
-                DELETE
+                DELETE<i class="material-icons left">delete</i>
               </button>
             </div>
           </div>

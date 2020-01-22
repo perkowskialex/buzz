@@ -13,3 +13,8 @@ html {
   flex-shrink: 0;
   order: 1;
 }
+
+.footer-images {
+  height: 8%;
+  width: 8%;
+}

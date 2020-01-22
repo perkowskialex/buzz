@@ -74,7 +74,13 @@ export default class SMSForm extends Component {
             onChange={this.onHandleChange}
           />
         </div>
-        <button type="submit" disabled={this.state.submitting}>
+        <button
+          className="waves-effect waves-light btn"
+          type="submit"
+          disabled={this.state.submitting}
+        >
+          <i class="material-icons left">send</i>
+          <i class="material-icons right">send</i>
           Send message
         </button>
       </form>
