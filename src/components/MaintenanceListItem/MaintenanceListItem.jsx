@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function MaintenanceListItem({
   maintenance,
-  handleDeleteMaintenance
+  handleDeleteMaintenance,
+  handleSendText
 }) {
   return (
     <div>
@@ -34,6 +35,9 @@ export default function MaintenanceListItem({
                 onClick={() => handleDeleteMaintenance(maintenance._id)}
               >
                 DELETE
+              </button>
+              <button className="btn waves-effect waves-light amber">
+                BUZZ ME
               </button>
             </div>
           </div>

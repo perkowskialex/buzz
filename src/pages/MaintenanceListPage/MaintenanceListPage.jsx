@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MaintenanceListItem from "../../components/MaintenanceListItem/MaintenanceListItem";
+import SMSForm from "../../components/SMSForm/SMSForm";
 
 export default function MaintenanceListPage(props) {
   return (
@@ -10,9 +11,11 @@ export default function MaintenanceListPage(props) {
           <MaintenanceListItem
             maintenance={maintenance}
             handleDeleteMaintenance={props.handleDeleteMaintenance}
+            handleSendText={props.handleSendText}
             key={maintenance._id}
           />
         ))}
+        <SMSForm />
       </div>
     </>
   );

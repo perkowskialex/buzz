@@ -73,6 +73,7 @@ class App extends Component {
           handleAddMaintenance={this.handleAddMaintenance}
           handleDeleteMaintenance={this.handleDeleteMaintenance}
           handleUpdateMaintenance={this.handleUpdateMaintenance}
+          handleSendText={this.handleSendText}
         />
         <main>
           <Route

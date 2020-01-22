@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema(
     name: String,
     email: { type: String, required: true, lowercase: true, unique: true },
     password: String,
-    maintenance: [{ type: Schema.Types.ObjectId, ref: "Maintenance" }]
+    maintenances: [{ type: Schema.Types.ObjectId, ref: "Maintenance" }]
   },
   {
     timestamps: true
