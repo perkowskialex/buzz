@@ -36,14 +36,14 @@ export default class AddMaintenancePage extends Component {
         <div
           className="center"
           style={{
-            display: "block",
+            width: "50%",
             textAlign: "center",
-            marginLeft: "33%"
+            marginLeft: "25%"
           }}
         >
           <form
             className="center"
-            style={{ width: "50%", alignItems: "center" }}
+            style={{ alignItems: "center" }}
             ref={this.formRef}
             autoComplete="off"
             onSubmit={this.handleSubmit}

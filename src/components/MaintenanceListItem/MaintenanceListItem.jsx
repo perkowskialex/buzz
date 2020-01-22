@@ -12,7 +12,7 @@ export default function MaintenanceListItem({
         <div class="col s12 m6">
           <div class="card blue darken-1">
             <div class="card-content white-text">
-              <span class="card-title">{maintenance.name}</span>
+              <span class="card-title center">{maintenance.name}</span>
               <p>Description: {maintenance.description}</p>
               <p></p>
               <p>Location: {maintenance.location}</p>
