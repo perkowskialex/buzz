@@ -5,7 +5,7 @@ import SMSForm from "../../components/SMSForm/SMSForm";
 export default function MaintenanceListPage(props) {
   return (
     <>
-      <h1>Maintenance List</h1>
+      <h1 className="center ">Maintenance List</h1>
       <div>
         {props.maintenances.map(maintenance => (
           <MaintenanceListItem
@@ -15,6 +15,7 @@ export default function MaintenanceListPage(props) {
             key={maintenance._id}
           />
         ))}
+        <h3>Send a Message</h3>
         <SMSForm />
       </div>
     </>

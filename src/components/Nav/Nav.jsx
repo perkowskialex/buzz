@@ -13,24 +13,31 @@ export default class Nav extends Component {
     return (
       <>
         <AppBar
+          className="blue darken-1"
           position="static"
-          style={{ display: "flex", alignItems: "space-around" }}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            padding: "10px",
+            justifyContent: "space-around"
+          }}
         >
-          <Toolbar>
-            <Link exact to="/">
-              Home
-            </Link>
-            <Link exact to="/signup">
-              Sign Up
-            </Link>
-            <Link exact to="/login">
-              Log In
-            </Link>
-            <Link exact to="/add">
-              Add Maintenance
-            </Link>
-          </Toolbar>
+          <Link className="amber-text" exact to="/">
+            Home
+          </Link>
+          <Link className="amber-text" exact to="/add">
+            Add Maintenance
+          </Link>
+          <Link className="amber-text" exact to="/signup">
+            Sign Up
+          </Link>
+          <Link className="amber-text" exact to="/login">
+            Log In
+          </Link>
         </AppBar>
+
+        {/* end of visual elements */}
+
         <Switch>
           <Route
             exact

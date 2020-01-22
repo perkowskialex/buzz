@@ -10,7 +10,7 @@ export default function MaintenanceListItem({
     <div>
       <div class="row">
         <div class="col s12 m6">
-          <div class="card blue-grey darken-1">
+          <div class="card blue darken-1">
             <div class="card-content white-text">
               <span class="card-title">{maintenance.name}</span>
               <p>{maintenance.description}</p>
@@ -35,9 +35,6 @@ export default function MaintenanceListItem({
                 onClick={() => handleDeleteMaintenance(maintenance._id)}
               >
                 DELETE
-              </button>
-              <button className="btn waves-effect waves-light amber">
-                BUZZ ME
               </button>
             </div>
           </div>
