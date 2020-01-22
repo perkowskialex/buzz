@@ -7,24 +7,37 @@ export default function MaintenanceListItem({
 }) {
   return (
     <div>
-      <div>
-        <h3>{maintenance.name}</h3>
-      </div>
-      <div>
-        <Link to={{ pathname: "/details", state: { maintenance } }}>
-          DETAILS
-        </Link>
-        <Link
-          to={{
-            pathname: "/edit",
-            state: { maintenance }
-          }}
-        >
-          EDIT
-        </Link>
-        <button onClick={() => handleDeleteMaintenance(maintenance._id)}>
-          DELETE
-        </button>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title">{maintenance.name}</span>
+              <p>{maintenance.description}</p>
+              <p></p>
+              <p>Location: {maintenance.location}</p>
+              <p>Days to complete: {maintenance.time}</p>
+            </div>
+            <div class="card-action">
+              <Link to={{ pathname: "/details", state: { maintenance } }}>
+                DETAILS
+              </Link>
+              <Link
+                to={{
+                  pathname: "/edit",
+                  state: { maintenance }
+                }}
+              >
+                EDIT{" "}
+              </Link>
+              <button
+                className="btn waves-effect waves-light red"
+                onClick={() => handleDeleteMaintenance(maintenance._id)}
+              >
+                DELETE
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

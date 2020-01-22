@@ -3,6 +3,8 @@ import "./App.css";
 import userService from "../../utils/userService";
 import Nav from "../../components/Nav/Nav";
 import * as maintenanceAPI from "../../services/maintenances-api";
+import { Route } from "react-router-dom";
+import MaintenanceDetailPage from "../../pages/MaintenanceDetailPage/MaintenanceDetailPage";
 
 class App extends Component {
   constructor() {
@@ -59,6 +61,18 @@ class App extends Component {
           handleAddMaintenance={this.handleAddMaintenance}
           handleDeleteMaintenance={this.handleDeleteMaintenance}
         />
+        <main>
+          <Route
+            exact
+            path="/details"
+            render={({ location }) => (
+              <MaintenanceDetailPage
+                handleDeleteMaintenance={this.handleDeleteMaintenance}
+                location={location}
+              />
+            )}
+          />
+        </main>
       </div>
     );
   }
