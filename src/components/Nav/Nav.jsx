@@ -39,6 +39,8 @@ export default class Nav extends Component {
                 user={this.props.user}
                 handleLogout={this.props.handleLogout}
                 handleDeleteMaintenance={this.props.handleDeleteMaintenance}
+                maintenances={this.maintenances}
+                props={this.props}
               />
             )}
           />

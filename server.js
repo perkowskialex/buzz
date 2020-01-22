@@ -8,8 +8,6 @@ const app = express();
 require("dotenv").config();
 require("./config/database");
 
-let maintenancesRouter = require("./routes/api/maintenances");
-
 app.use(logger("dev"));
 app.use(express.json());
 

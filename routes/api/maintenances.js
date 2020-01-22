@@ -6,7 +6,7 @@ var maintenancesCtrl = require("../../controllers/api/maintenances");
 router.get("/", maintenancesCtrl.index);
 router.get("/:id", maintenancesCtrl.show);
 router.post("/", maintenancesCtrl.create);
-router.delete("/:id", maintenancesCtrl.delete);
+router.delete("/:id", maintenancesCtrl.deleteOne);
 // router.put("/:id", maintenancesCtrl.update);
 
 module.exports = router;

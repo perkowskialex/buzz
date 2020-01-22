@@ -27,7 +27,7 @@ class App extends Component {
     await maintenanceAPI.deleteOne(id);
     this.setState(
       state => ({
-        maintenances: state.maintenances.filter(p => p._id !== id)
+        maintenances: state.maintenances.filter(m => m._id !== id)
       }),
       () => this.props.history.push("/")
     );
@@ -51,6 +51,8 @@ class App extends Component {
     return (
       <div>
         <Nav
+          props={this.props}
+          maintenances={this.state.maintenances}
           user={this.state.user}
           handleLogout={this.handleLogout}
           handleSignuporLogin={this.handleSignuporLogin}
