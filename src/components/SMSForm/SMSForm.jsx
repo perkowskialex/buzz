@@ -75,7 +75,7 @@ export default class SMSForm extends Component {
           />
         </div>
         <button
-          className="waves-effect waves-light btn"
+          className="waves-effect waves-light btn blue darken-4"
           type="submit"
           disabled={this.state.submitting}
         >

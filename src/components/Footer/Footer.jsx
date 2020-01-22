@@ -11,11 +11,11 @@ export default class Footer extends Component {
               <p class="grey-text text-lighten-4">By Alexander Perkowski</p>
             </div>
             <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
+              <h5 class="white-text">Check me Out</h5>
               <ul>
                 <li>
                   <a
-                    class="amber-text text-darken-1"
+                    class="amber-text text-darken-1 valign-wrapper"
                     href="https://github.com/perkowskialex/"
                   >
                     <img
@@ -23,12 +23,12 @@ export default class Footer extends Component {
                       alt="Git Hub logo"
                       src="https://i.imgur.com/81P9peo.png"
                     />{" "}
-                    GitHub
+                    &nbsp;GitHub
                   </a>
                 </li>
                 <li>
                   <a
-                    class="amber-text text-darken-1"
+                    class="amber-text text-darken-1 valign-wrapper"
                     href="https://www.linkedin.com/in/alexander-perkowski/"
                   >
                     <img
@@ -36,7 +36,7 @@ export default class Footer extends Component {
                       alt="LinkedIn logo"
                       src="https://i.imgur.com/dyLARSr.png"
                     />{" "}
-                    LinkedIn
+                    &nbsp;LinkedIn
                   </a>
                 </li>
               </ul>
@@ -44,12 +44,7 @@ export default class Footer extends Component {
           </div>
         </div>
         <div class="footer-copyright">
-          <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">
-              More Links
-            </a>
-          </div>
+          <div class="container">© 2020 Alexander Perkowski</div>
         </div>
       </footer>
     );
