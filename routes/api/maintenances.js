@@ -7,6 +7,6 @@ router.get("/", maintenancesCtrl.index);
 router.get("/:id", maintenancesCtrl.show);
 router.post("/", maintenancesCtrl.create);
 router.delete("/:id", maintenancesCtrl.deleteOne);
-// router.put("/:id", maintenancesCtrl.update);
+router.put("/:id", maintenancesCtrl.update);
 
 module.exports = router;

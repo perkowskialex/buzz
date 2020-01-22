@@ -3,6 +3,7 @@ import SignupPage from "../../pages/SignupPage/SignupPage";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import MaintenanceListPage from "../../pages/MaintenanceListPage/MaintenanceListPage";
 import AddMaintenancePage from "../../pages/AddMaintenancePage/AddMaintenancePage";
+import EditMaintenancePage from "../../pages/EditMaintenancePage/EditMaintenancePage";
 import { Link, Route, Switch } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar/AppBar";
 import { Toolbar } from "@material-ui/core";
@@ -39,8 +40,19 @@ export default class Nav extends Component {
                 user={this.props.user}
                 handleLogout={this.props.handleLogout}
                 handleDeleteMaintenance={this.props.handleDeleteMaintenance}
+                handleUpdateMaintenance={this.props.handleUpdateMaintenance}
                 maintenances={this.props.maintenances}
                 props={this.props}
+              />
+            )}
+          />
+          <Route
+            exact
+            path="/edit"
+            render={({ location }) => (
+              <EditMaintenancePage
+                handleUpdateMaintenance={this.props.handleUpdateMaintenance}
+                location={location}
               />
             )}
           />

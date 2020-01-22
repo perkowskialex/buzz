@@ -35,6 +35,18 @@ class App extends Component {
     );
   };
 
+  handleUpdateMaintenance = async updatedMaintenanceData => {
+    const updatedMaintenance = await maintenanceAPI.update(
+      updatedMaintenanceData
+    );
+    const newMaintenanceArray = this.state.maintenances.map(m =>
+      m._id === updatedMaintenance._id ? updatedMaintenance : m
+    );
+    this.setState({ maintenances: newMaintenanceArray }, () =>
+      this.props.history.push("/")
+    );
+  };
+
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -60,6 +72,7 @@ class App extends Component {
           handleSignuporLogin={this.handleSignuporLogin}
           handleAddMaintenance={this.handleAddMaintenance}
           handleDeleteMaintenance={this.handleDeleteMaintenance}
+          handleUpdateMaintenance={this.handleUpdateMaintenance}
         />
         <main>
           <Route
@@ -68,6 +81,7 @@ class App extends Component {
             render={({ location }) => (
               <MaintenanceDetailPage
                 handleDeleteMaintenance={this.handleDeleteMaintenance}
+                handleUpdateMaintenance={this.handleUpdateMaintenance}
                 location={location}
               />
             )}
