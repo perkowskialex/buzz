@@ -7,11 +7,11 @@ export default class Footer extends Component {
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
-              <h5 class="white-text">Buzz App</h5>
-              <p class="grey-text text-lighten-4">By Alexander Perkowski</p>
+              <h5 class="amber-text">Buzz App</h5>
+              <p class="grey-text text-lighten-4">by Alexander Perkowski</p>
             </div>
             <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Check me Out</h5>
+              <h5 class="amber-text">Check me Out</h5>
               <ul>
                 <li>
                   <a

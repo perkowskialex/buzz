@@ -70,7 +70,7 @@ export default class EditMaintenancePage extends Component {
               />
             </div>
             <button
-              className="btn waves-effect waves-light blue darken-1"
+              className="btn waves-effect waves-light blue darken-2"
               type="submit"
               disabled={this.state.invalidForm}
             >

@@ -15,8 +15,8 @@ export default function MaintenanceListPage(props) {
             key={maintenance._id}
           />
         ))}
-        <h3 className="center">Send a Text Reminder</h3>
-        <SMSForm />
+        <h3 className>Send a Text Reminder</h3>
+        <SMSForm className="center" />
       </div>
     </>
   );

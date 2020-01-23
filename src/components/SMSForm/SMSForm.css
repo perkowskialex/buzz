@@ -1,6 +1,7 @@
 .sms-form {
   text-align: left;
   padding: 1em;
+  width: 50%;
 }
 .sms-form label {
   display: block;
