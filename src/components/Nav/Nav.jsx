@@ -6,7 +6,6 @@ import AddMaintenancePage from "../../pages/AddMaintenancePage/AddMaintenancePag
 import EditMaintenancePage from "../../pages/EditMaintenancePage/EditMaintenancePage";
 import { Link, Route, Switch } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar/AppBar";
-import { Toolbar } from "@material-ui/core";
 
 export default class Nav extends Component {
   render() {
